@@ -22,10 +22,12 @@ const badge = ({ icon, label }: TagProps) => (
       whiteSpace: 'nowrap',
       maxWidth: 110,
       overflow: 'hidden',
-      textOverflow: 'ellipsis'
+      textOverflow: 'ellipsis',
     }}
   >
-    {icon && <Box sx={{ display: 'flex', alignItems: 'center', mr: 0.5 }}>{icon}</Box>}
+    {icon && (
+      <Box sx={{ display: 'flex', alignItems: 'center', mr: 0.5 }}>{icon}</Box>
+    )}
     <Typography
       component="span"
       sx={{
@@ -45,4 +47,4 @@ const badge = ({ icon, label }: TagProps) => (
   </Box>
 );
 
-export default badge; 
+export default badge;

@@ -1,4 +1,11 @@
-import { Card, Box, Typography, Stack, IconButton, Tooltip } from '@mui/material';
+import {
+  Card,
+  Box,
+  Typography,
+  Stack,
+  IconButton,
+  Tooltip,
+} from '@mui/material';
 import FolderIcon from '@mui/icons-material/Folder';
 import StarIcon from '@mui/icons-material/Star';
 import BugReportIcon from '@mui/icons-material/BugReport';
@@ -43,7 +50,7 @@ const RepoCard = ({ repo }: RepoCardProps) => {
       label: repo.open_issues_count,
       title: pluralize(repo.open_issues_count, 'issue', 'issues'),
     },
-  ]
+  ];
 
   return (
     <Card
@@ -75,7 +82,7 @@ const RepoCard = ({ repo }: RepoCardProps) => {
             right: 16,
             bgcolor: 'white',
             border: 'none',
-            color: "info",
+            color: 'info',
             width: 40,
             height: 40,
             zIndex: 2,
@@ -83,7 +90,7 @@ const RepoCard = ({ repo }: RepoCardProps) => {
               bgcolor: '#f5f5f5',
             },
           }}
-          onClick={e => {
+          onClick={(e) => {
             e.stopPropagation();
             window.open(repo.html_url, '_blank', 'noopener,noreferrer');
           }}
@@ -92,12 +99,19 @@ const RepoCard = ({ repo }: RepoCardProps) => {
         </IconButton>
       </Tooltip>
       <Box display="flex" alignItems="center" gap={1} mb={1}>
-        <FolderIcon sx={{ color: "info", fontSize: 36 }} />
+        <FolderIcon sx={{ color: 'info', fontSize: 36 }} />
         <Tooltip title={repo.name}>
           <Typography
             variant="h6"
             fontWeight={700}
-            sx={{ fontSize: 20, maxWidth: 180, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' }}
+            sx={{
+              fontSize: 20,
+              maxWidth: 180,
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              display: 'block',
+            }}
             noWrap
           >
             {repo.name}
@@ -105,7 +119,11 @@ const RepoCard = ({ repo }: RepoCardProps) => {
         </Tooltip>
       </Box>
 
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 2, minHeight: 40 }}>
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        sx={{ mb: 2, minHeight: 40 }}
+      >
         {repo.description || 'No description provided.'}
       </Typography>
 
@@ -113,8 +131,11 @@ const RepoCard = ({ repo }: RepoCardProps) => {
         <Stack direction="row" spacing={1}>
           {badges.map((badge) => (
             <Tooltip key={badge.title} title={badge.title}>
-              <span onClick={e => e.stopPropagation()}>
-                <Badge icon={<badge.icon sx={{ color: "info", fontSize: 18 }} />} label={badge.label} />
+              <span onClick={(e) => e.stopPropagation()}>
+                <Badge
+                  icon={<badge.icon sx={{ color: 'info', fontSize: 18 }} />}
+                  label={badge.label}
+                />
               </span>
             </Tooltip>
           ))}
