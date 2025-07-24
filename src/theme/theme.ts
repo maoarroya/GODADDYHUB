@@ -5,6 +5,7 @@ const theme = createTheme({
     mode: 'light',
     primary: {
       main: '#1B1D1F',
+      light: '#d5eced',
     },
     secondary: {
       main: '#00A4EF',
@@ -12,9 +13,12 @@ const theme = createTheme({
     background: {
       default: '#FFFFFF',
     },
+    info: {
+      main: '#1bdbdb',
+    },
   },
   typography: {
-    fontFamily: `"Helvetica", "Arial", "sans-serif"`,
+    fontFamily: `"Inter", "Arial", "sans-serif"`,
     h4: {
       fontWeight: 600,
     },
