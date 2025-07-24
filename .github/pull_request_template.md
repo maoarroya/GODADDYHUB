@@ -6,7 +6,7 @@
 
 <!-- Bullet the concrete changes included in this PR. -->
 
-- 
+-
 
 ## Screenshot (if applicable)
 

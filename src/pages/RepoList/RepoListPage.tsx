@@ -10,7 +10,7 @@ function RepoListPage() {
         Primary Button
       </Button>
     </div>
-  )
+  );
 }
 
 export default RepoListPage;

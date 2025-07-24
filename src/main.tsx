@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -10,7 +9,7 @@ WebFont.load({
   google: {
     families: ['Inter:300,400,500,700', 'sans-serif'],
   },
-})
+});
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -18,5 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <CssBaseline />
       <App />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
