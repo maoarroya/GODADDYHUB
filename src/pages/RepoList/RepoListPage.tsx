@@ -1,5 +1,16 @@
+import { Button, Typography } from '@mui/material';
+
 function RepoListPage() {
-  return <h2>Go daddy hub Repository List Page</h2>;
+  return (
+    <div style={{ padding: 24 }}>
+      <Typography variant="h4" gutterBottom>
+        GoDaddyHub theme test
+      </Typography>
+      <Button variant="contained" color="primary">
+        Primary Button
+      </Button>
+    </div>
+  )
 }
 
 export default RepoListPage;
