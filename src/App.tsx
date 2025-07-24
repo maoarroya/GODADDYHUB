@@ -1,17 +1,16 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import RepoListPage from './pages/RepoList';
+import RepoDetailPage from './pages/RepoDetail/RepoDetailPage';
 
 function App() {
   return (
-    <div className="container">
-      <h1>GoDaddyHub</h1>
-      <p className="subtitle">
-        Explore GoDaddy's public GitHub repositories in one place.
-      </p>
-      <p className="description">
-        View repository details like description, languages, forks, issues, and watchers.
-      </p>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RepoListPage />} />
+        <Route path="/repo/:name" element={<RepoDetailPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
