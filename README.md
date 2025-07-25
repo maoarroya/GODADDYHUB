@@ -20,13 +20,13 @@ This project provides a simple interface to explore GoDaddy's public GitHub repo
 
 What I did
 - Added semantic commit conventions for clarity and future automation with CI/CD tools like Semantic Release.
-- Structured the app with folders like components/, hooks/, selectors/, services/ and routing to maintain separation of concerns. [#1](https://github.com/usuario/repositorio/pull/1)
-- Configured Material UI with a custom theme for consistent styling across the app. [#2](https://github.com/usuario/repositorio/pull/2)
-- Set up Redux Toolkit and RTK Query for scalable, normalized data fetching and state management. [#3](https://github.com/usuario/repositorio/pull/3)
-- Integrated Jest with a sample test to establish a foundation for unit testing. [#4](https://github.com/usuario/repositorio/pull/4)
-- Implemented a repo list page with RepoCard and Badge components to display key repository information. [#5](https://github.com/usuario/repositorio/pull/5)
-- Built a repo detail view that fetches language data dynamically using RTK Query and modular, reusable components. [#6](https://github.com/usuario/repositorio/pull/6)
-- E2E tests. [#7](https://github.com/usuario/repositorio/pull/7)
+- Structured the app with folders like components/, hooks/, selectors/, services/ and routing to maintain separation of concerns. [#1](https://github.com/maoarroya/GODADDYHUB/pull/1)
+- Configured Material UI with a custom theme for consistent styling across the app. [#2](https://github.com/maoarroya/GODADDYHUB/pull/2)
+- Set up Redux Toolkit and RTK Query for scalable, normalized data fetching and state management. [#3](https://github.com/maoarroya/GODADDYHUB/pull/3)
+- Integrated Jest with a sample test to establish a foundation for unit testing. [#4](https://github.com/maoarroya/GODADDYHUB/pull/4)
+- Implemented a repo list page with RepoCard and Badge components to display key repository information. [#5](https://github.com/maoarroya/GODADDYHUB/pull/5)
+- Built a repo detail view that fetches language data dynamically using RTK Query and modular, reusable components. [#6](https://github.com/maoarroya/GODADDYHUB/pull/6)
+- E2E tests. [#7](https://github.com/maoarroya/GODADDYHUB/pull/7)
 - Vercel deploy integration
 
 Why I chose this stack
