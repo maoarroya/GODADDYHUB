@@ -104,7 +104,7 @@ function RepoDetailPage() {
           </IconButton>
         </Tooltip>
         <CardContent>
-          <Typography variant="h6" fontWeight={700} mb={1}>
+          <Typography variant="h6" fontWeight={700} mb={1} data-testid="repo-detail-title">
             {repo.name}
           </Typography>
           <Typography variant="body1" color="text.secondary" mb={2}>
