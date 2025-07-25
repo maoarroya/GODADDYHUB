@@ -19,29 +19,18 @@ This project provides a simple interface to explore GoDaddy's public GitHub repo
 ##  My Contributions & Decisions
 
 What I did
-- Implemented a repo list page with RepoCard and Badge components to display key repository information.
-
-- Built a repo detail view (RepoDetailPage) that fetches language data dynamically using RTK Query.
-
-- Created modular, reusable components (e.g., RepoInfoItem, GithubButton, PageHeader) to promote clean and DRY code.
-
 - Added semantic commit conventions for clarity and future automation with CI/CD tools like Semantic Release.
-
-- Set up Redux Toolkit and RTK Query for scalable, normalized data fetching and state management.
-
-- Integrated Jest with a sample test to establish a foundation for unit testing.
-
-- Configured Material UI with a custom theme for consistent styling across the app.
-
-- Structured the app with folders like components/, hooks/, selectors/, and services/ to maintain separation of concerns.
+- Structured the app with folders like components/, hooks/, selectors/, services/ and routing to maintain separation of concerns. [#1](https://github.com/usuario/repositorio/pull/1)
+- Configured Material UI with a custom theme for consistent styling across the app. [#2](https://github.com/usuario/repositorio/pull/2)
+- Set up Redux Toolkit and RTK Query for scalable, normalized data fetching and state management. [#3](https://github.com/usuario/repositorio/pull/3)
+- Integrated Jest with a sample test to establish a foundation for unit testing. [#4](https://github.com/usuario/repositorio/pull/4)
+- Implemented a repo list page with RepoCard and Badge components to display key repository information. [#5](https://github.com/usuario/repositorio/pull/5)
+- Built a repo detail view that fetches language data dynamically using RTK Query and modular, reusable components. [#6](https://github.com/usuario/repositorio/pull/6)
 
 Why I chose this stack
 - RTK Query: Even for a small project, RTK Query makes handling API states (loading, error, success) clean and scalable without boilerplate.
-
 - Vite: Offers a fast, modern dev experience with minimal configuration and no need for SSR in this case.
-
 - Material UI: Speeds up development with a rich set of prebuilt, accessible components that are easy to theme and extend.
-
 - Semantic commits: Improve collaboration, make changelogs and automation (like semantic-release) much easier.
 
 ## Getting started
