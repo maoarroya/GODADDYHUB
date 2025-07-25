@@ -2,34 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import RepoListPage from './RepoListPage';
 import * as githubApi from '../../services/githubApi';
-import type { Repo } from '../../types';
+import { mockRepos } from '../../__mocks__/mockRepo';
 
 jest.mock('../../services/githubApi');
-
-const mockRepos: Repo[] = [
-  {
-    id: 1,
-    name: 'redis-optimization',
-    description: 'A set of utilities to optimize Redis queries',
-    language: 'TypeScript',
-    forks_count: 10,
-    open_issues_count: 2,
-    watchers_count: 42,
-    html_url: 'https://github.com/godaddy/redis-optimization',
-    stargazers_count: 5,
-  },
-  {
-    id: 2,
-    name: 'ui-component-library',
-    description: 'Reusable UI components built with React and MUI',
-    language: 'JavaScript',
-    forks_count: 5,
-    open_issues_count: 0,
-    watchers_count: 17,
-    html_url: 'https://github.com/godaddy/ui-component-library',
-    stargazers_count: 10,
-  },
-];
 
 describe('RepoListPage', () => {
   afterEach(() => {
@@ -91,15 +66,10 @@ describe('RepoListPage', () => {
     );
 
     expect(screen.getByText('redis-optimization')).toBeInTheDocument();
-    expect(
-      screen.getByText('A set of utilities to optimize Redis queries'),
-    ).toBeInTheDocument();
     expect(screen.getByText('TypeScript')).toBeInTheDocument();
 
     expect(screen.getByText('ui-component-library')).toBeInTheDocument();
-    expect(
-      screen.getByText('Reusable UI components built with React and MUI'),
-    ).toBeInTheDocument();
+
     expect(screen.getByText('JavaScript')).toBeInTheDocument();
   });
 

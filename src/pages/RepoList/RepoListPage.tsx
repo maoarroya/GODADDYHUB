@@ -1,7 +1,10 @@
 import { CircularProgress, Alert, Grid, Box, Typography } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+
 import { useGetOrgReposQuery } from '../../services/githubApi';
-import RepoCard from '../../components/repoCard/RepoCard';
+
+import RepoCard from '../../components/repoCard';
+import PageHeader from '../../components/pageHeader';
 
 function RepoListPage() {
   const { data, isLoading, isError } = useGetOrgReposQuery('godaddy');
@@ -43,18 +46,8 @@ function RepoListPage() {
 
   return (
     <Box sx={{ p: { xs: 2, md: 4 }, minHeight: '100vh' }}>
+      <PageHeader title="GoDaddyHub" />
       <Typography
-        variant="h4"
-        gutterBottom
-        fontWeight={600}
-        color="primary.main"
-        data-testid="page-title"
-        align="center"
-      >
-        GoDaddyHub
-      </Typography>
-      <Typography
-        mt={5}
         mb={8}
         variant="body2"
         color="text.secondary"

@@ -8,4 +8,9 @@ export interface Repo {
   watchers_count: number;
   html_url: string;
   stargazers_count: number;
+  languages_url: string;
+  license?: { spdx_id: string; name: string; url: string };
+  updated_at?: string;
 }
+
+export type RepoLanguages = Record<string, number>;

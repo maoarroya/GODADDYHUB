@@ -9,7 +9,10 @@ export const githubApi = createApi({
     getOrgRepos: builder.query<Repo[], string>({
       query: (org) => `orgs/${org}/repos`,
     }),
+    getRepoLanguages: builder.query<Record<string, number>, string>({
+      query: (languagesUrl) => ({ url: languagesUrl, baseUrl: '' }),
+    }),
   }),
 });
 
-export const { useGetOrgReposQuery } = githubApi;
+export const { useGetOrgReposQuery, useGetRepoLanguagesQuery } = githubApi;

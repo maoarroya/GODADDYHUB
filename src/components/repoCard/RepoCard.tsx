@@ -13,10 +13,13 @@ import ForkRightIcon from '@mui/icons-material/ForkRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CodeIcon from '@mui/icons-material/Code';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+
 import type { Repo } from '../../types';
-import Badge from './badge';
-import { useNavigate } from 'react-router-dom';
 import { pluralize } from '../../utils';
+
+import { useNavigate } from 'react-router-dom';
+
+import Badge from '../badge';
 
 interface RepoCardProps {
   repo: Repo;
@@ -62,7 +65,7 @@ const RepoCard = ({ repo }: RepoCardProps) => {
         flexDirection: 'column',
         minWidth: 410,
         maxWidth: 410,
-        minHeight: 200,
+        minHeight: 120,
         height: '100%',
         justifyContent: 'space-between',
         transition: 'box-shadow 0.2s',
@@ -80,15 +83,11 @@ const RepoCard = ({ repo }: RepoCardProps) => {
             position: 'absolute',
             top: 16,
             right: 16,
-            bgcolor: 'white',
             border: 'none',
-            color: 'info',
+            color: 'info.main',
             width: 40,
             height: 40,
             zIndex: 2,
-            '&:hover': {
-              bgcolor: '#f5f5f5',
-            },
           }}
           onClick={(e) => {
             e.stopPropagation();
@@ -118,15 +117,6 @@ const RepoCard = ({ repo }: RepoCardProps) => {
           </Typography>
         </Tooltip>
       </Box>
-
-      <Typography
-        variant="body2"
-        color="text.secondary"
-        sx={{ mb: 2, minHeight: 40 }}
-      >
-        {repo.description || 'No description provided.'}
-      </Typography>
-
       <Box display="flex" flexDirection="column" gap={1} mt="auto">
         <Stack direction="row" spacing={1}>
           {badges.map((badge) => (
