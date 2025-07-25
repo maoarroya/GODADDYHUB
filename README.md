@@ -35,11 +35,13 @@ Why I chose this stack
 - Material UI: Speeds up development with a rich set of prebuilt, accessible components that are easy to theme and extend.
 - Semantic commits: Improve collaboration, make changelogs and automation (like semantic-release) much easier.
 
-## work to add or improve
+## Improvements to Implement
 
-- Enhance error handling to provide clearer and more user-friendly feedback.
+- Move all inline fontSizes and colors to the theme.
+- Enhance error handling.
 - Implement an empty state message in the repository list for better UX when no data is available.
 - Set up basic CI/CD jobs to automate testing and deployment.
+- Implement semantic html
 
 ## Getting started
 
