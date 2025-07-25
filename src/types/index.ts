@@ -14,3 +14,5 @@ export interface Repo {
 }
 
 export type RepoLanguages = Record<string, number>;
+
+export type LanguagePercent = { name: string; percent: number };

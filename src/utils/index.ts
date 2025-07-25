@@ -1,12 +1,11 @@
 import { LANGUAGE_COLORS } from '../constants';
+import type { LanguagePercent } from '../types';
 
 export const pluralize = (count: number, singular: string, plural: string) =>
   `${count} ${count === 1 ? singular : plural}`;
 
 export const getLangColor = (idx: number): string =>
   LANGUAGE_COLORS[idx % LANGUAGE_COLORS.length];
-
-type LanguagePercent = { name: string; percent: number };
 
 export const getLanguagePercents = (
   languages: Record<string, number>,
