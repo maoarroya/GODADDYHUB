@@ -8,6 +8,7 @@ const PageHeader = ({ title }: { title: string }) => (
       mb={8}
       fontWeight={600}
       color="primary.main"
+      data-testid="page-title"
     >
       {title}
     </Typography>
