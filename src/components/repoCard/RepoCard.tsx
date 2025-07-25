@@ -13,10 +13,13 @@ import ForkRightIcon from '@mui/icons-material/ForkRight';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CodeIcon from '@mui/icons-material/Code';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+
 import type { Repo } from '../../types';
-import Badge from './badge';
-import { useNavigate } from 'react-router-dom';
 import { pluralize } from '../../utils';
+
+import { useNavigate } from 'react-router-dom';
+
+import Badge from '../badge';
 
 interface RepoCardProps {
   repo: Repo;

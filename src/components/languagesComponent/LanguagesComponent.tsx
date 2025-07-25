@@ -1,12 +1,14 @@
-import { Box, Typography } from "@mui/material";
-import { getLangColor, getLanguagePercents } from "../../utils";
-import type { RepoLanguages } from "../../types";
+import { Box, Typography } from '@mui/material';
+import { getLangColor, getLanguagePercents } from '../../utils';
+import type { RepoLanguages } from '../../types';
 
 interface LanguagesComponentProps {
   languages: RepoLanguages;
 }
 
-const LanguagesComponent: React.FC<LanguagesComponentProps> = ({ languages }) => {
+const LanguagesComponent: React.FC<LanguagesComponentProps> = ({
+  languages,
+}) => {
   const langPercents = getLanguagePercents(languages || {});
 
   const renderBarSegments = () => {
@@ -19,12 +21,12 @@ const LanguagesComponent: React.FC<LanguagesComponentProps> = ({ languages }) =>
         <Box
           key={lang.name}
           sx={{
-            position: "absolute",
+            position: 'absolute',
             left: `${left}%`,
             width: `${width}%`,
-            height: "100%",
+            height: '100%',
             bgcolor: color,
-            transition: "width 0.3s",
+            transition: 'width 0.3s',
           }}
         />
       );
@@ -35,12 +37,15 @@ const LanguagesComponent: React.FC<LanguagesComponentProps> = ({ languages }) =>
 
   const renderLegend = () =>
     langPercents.map((lang, i) => (
-      <Box key={lang.name} sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <Box
+        key={lang.name}
+        sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+      >
         <Box
           sx={{
             width: 14,
             height: 14,
-            borderRadius: "50%",
+            borderRadius: '50%',
             bgcolor: getLangColor(i),
           }}
         />
@@ -59,14 +64,14 @@ const LanguagesComponent: React.FC<LanguagesComponentProps> = ({ languages }) =>
         sx={{
           height: 10,
           borderRadius: 5,
-          bgcolor: "#e6e6e6",
-          overflow: "hidden",
-          position: "relative",
+          bgcolor: '#e6e6e6',
+          overflow: 'hidden',
+          position: 'relative',
         }}
       >
         {renderBarSegments()}
       </Box>
-      <Box sx={{ display: "flex", mt: 1, flexWrap: "wrap", gap: 3 }}>
+      <Box sx={{ display: 'flex', mt: 1, flexWrap: 'wrap', gap: 3 }}>
         {renderLegend()}
       </Box>
     </Box>
