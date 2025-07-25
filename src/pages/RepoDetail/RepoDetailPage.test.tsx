@@ -21,10 +21,21 @@ jest.mock('../../services/githubApi', () => {
     useGetRepoLanguagesQuery: jest.fn(),
   };
 });
-jest.mock('../../components/languagesComponent', () => () => <div data-testid="languages-component" />);
-jest.mock('../../components/repoInfoItem', () => ({ __esModule: true, default: ({ value }: { value: number }) => <div data-testid="repo-info-item">{value}</div> }));
-jest.mock('../../components/pageHeader', () => ({ __esModule: true, default: ({ title }: { title: string }) => <div data-testid="page-header">{title}</div> }));
-
+jest.mock('../../components/languagesComponent', () => () => (
+  <div data-testid="languages-component" />
+));
+jest.mock('../../components/repoInfoItem', () => ({
+  __esModule: true,
+  default: ({ value }: { value: number }) => (
+    <div data-testid="repo-info-item">{value}</div>
+  ),
+}));
+jest.mock('../../components/pageHeader', () => ({
+  __esModule: true,
+  default: ({ title }: { title: string }) => (
+    <div data-testid="page-header">{title}</div>
+  ),
+}));
 
 describe('RepoDetailPage', () => {
   beforeEach(() => {
@@ -41,45 +52,55 @@ describe('RepoDetailPage', () => {
     render(
       <Provider store={store}>
         <RepoDetailPage />
-      </Provider>
+      </Provider>,
     );
     expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
   });
 
   it('shows loading state for languages', () => {
     jest.spyOn(selectors, 'repoSelector').mockReturnValue(mockRepos[0]);
-    (githubApi.useGetRepoLanguagesQuery as jest.Mock).mockReturnValue({ isLoading: true });
+    (githubApi.useGetRepoLanguagesQuery as jest.Mock).mockReturnValue({
+      isLoading: true,
+    });
     render(
       <Provider store={store}>
         <RepoDetailPage />
-      </Provider>
+      </Provider>,
     );
     expect(screen.getByRole('progressbar')).toBeInTheDocument();
   });
 
   it('shows error state for languages', () => {
     jest.spyOn(selectors, 'repoSelector').mockReturnValue(mockRepos[0]);
-    (githubApi.useGetRepoLanguagesQuery as jest.Mock).mockReturnValue({ isError: true });
+    (githubApi.useGetRepoLanguagesQuery as jest.Mock).mockReturnValue({
+      isError: true,
+    });
     render(
       <Provider store={store}>
         <RepoDetailPage />
-      </Provider>
+      </Provider>,
     );
     expect(screen.getByText(/error loading languages/i)).toBeInTheDocument();
   });
 
   it('renders repo details and languages', () => {
     jest.spyOn(selectors, 'repoSelector').mockReturnValue(mockRepos[0]);
-    (githubApi.useGetRepoLanguagesQuery as jest.Mock).mockReturnValue({ data: { TypeScript: 100 }, isLoading: false, isError: false });
+    (githubApi.useGetRepoLanguagesQuery as jest.Mock).mockReturnValue({
+      data: { TypeScript: 100 },
+      isLoading: false,
+      isError: false,
+    });
     render(
       <Provider store={store}>
         <RepoDetailPage />
-      </Provider>
+      </Provider>,
     );
     expect(screen.getByText('redis-optimization')).toBeInTheDocument();
-    expect(screen.getByText('A set of utilities to optimize Redis queries')).toBeInTheDocument();
+    expect(
+      screen.getByText('A set of utilities to optimize Redis queries'),
+    ).toBeInTheDocument();
     expect(screen.getByTestId('languages-component')).toBeInTheDocument();
     expect(screen.getByTestId('page-header')).toHaveTextContent('GoDaddyHub');
     expect(screen.getAllByTestId('repo-info-item').length).toBeGreaterThan(0);
   });
-}); 
+});

@@ -11,7 +11,8 @@ export const mockRepos: Repo[] = [
     watchers_count: 42,
     html_url: 'https://github.com/godaddy/redis-optimization',
     stargazers_count: 5,
-    languages_url: 'https://api.github.com/repos/godaddy/redis-optimization/languages',
+    languages_url:
+      'https://api.github.com/repos/godaddy/redis-optimization/languages',
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ export const mockRepos: Repo[] = [
     watchers_count: 17,
     html_url: 'https://github.com/godaddy/ui-component-library',
     stargazers_count: 10,
-    languages_url: 'https://api.github.com/repos/godaddy/ui-component-library/languages',
+    languages_url:
+      'https://api.github.com/repos/godaddy/ui-component-library/languages',
   },
 ];
